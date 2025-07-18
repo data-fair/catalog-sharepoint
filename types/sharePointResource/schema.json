@@ -1,0 +1,47 @@
+{
+  "$id": "https://github.com/data-fair/catalog-sharepoint/sharepoint-schema",
+  "x-exports": [
+    "types"
+  ],
+  "title": "SharePointResource",
+  "type": "object",
+  "required": [
+    "id",
+    "name",
+    "size",
+    "parentReference"
+  ],
+  "properties": {
+    "id": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "size": {
+      "type": "number"
+    },
+    "parentReference": {
+      "type": "object",
+      "required": [
+        "path"
+      ],
+      "properties": {
+        "path": {
+          "type": "string"
+        }
+      }
+    },
+    "file": {
+      "type": "object",
+      "properties": {
+        "mimeType": {
+          "type": "string"
+        }
+      }
+    },
+    "webUrl": {
+      "type": "string"
+    }
+  }
+}

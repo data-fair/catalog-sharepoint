@@ -7,13 +7,7 @@ import type { Capability } from '@data-fair/types-catalogs'
  */
 export const capabilities = [
   'import',
-  'search',
-  'pagination',
-  'importConfig',
-  'publication',
-  'thumbnail',
-  'thumbnailUrl'
 ] satisfies Capability[]
 
-export type MockCapabilities = typeof capabilities
+export type SharePointCapabilities = typeof capabilities
 export default capabilities
