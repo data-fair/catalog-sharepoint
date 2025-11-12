@@ -6,6 +6,7 @@ import type { Capability } from '@data-fair/types-catalogs'
  * The capabilities must satisfy the `Capability` type.
  */
 export const capabilities = [
+  'thumbnail',
   'import',
 ] satisfies Capability[]
 

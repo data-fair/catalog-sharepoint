@@ -1,13 +1,13 @@
 import type { SharePointConfig, SharePointResource } from '#types'
 import type { SharePointCapabilities } from './capabilities.ts'
 import { getToken } from './connect.ts'
-import type { CatalogPlugin, Folder, ListResourcesContext } from '@data-fair/types-catalogs'
+import type { CatalogPlugin, Folder, ListContext } from '@data-fair/types-catalogs'
 import axios from '@data-fair/lib-node/axios.js'
 
 /**
  * Alias type for the list of resources returned by the SharePoint plugin.
  */
-type ResourceList = Awaited<ReturnType<CatalogPlugin['listResources']>>['results']
+type ResourceList = Awaited<ReturnType<CatalogPlugin['list']>>['results']
 
 /**
  * Lists resources and folders from a SharePoint site or folder.
@@ -20,7 +20,7 @@ type ResourceList = Awaited<ReturnType<CatalogPlugin['listResources']>>['results
  * @param context.params.currentFolderId The ID of the current folder to list resources from
  * @returns A promise that resolves to the list of resources and folders
  */
-export const listResources = async ({ catalogConfig, secrets, params }: ListResourcesContext<SharePointConfig, SharePointCapabilities>): ReturnType<CatalogPlugin['listResources']> => {
+export const list = async ({ catalogConfig, secrets, params }: ListContext<SharePointConfig, SharePointCapabilities>): ReturnType<CatalogPlugin['list']> => {
   try {
     const accessToken = await getToken(catalogConfig.tenantId, catalogConfig.clientId, secrets.clientSecret)
     const resources = await getResourcesAndFolders(catalogConfig.siteId, accessToken, params.currentFolderId)
