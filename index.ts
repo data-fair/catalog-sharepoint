@@ -20,7 +20,7 @@ const plugin: CatalogPlugin<SharePointConfig, SharePointCapabilities> = {
 
   metadata: {
     title: 'Catalog SharePoint',
-    thumbnailPath: './lib/resources/thumbnail.svg',
+    thumbnailPath: './lib/thumbnail.svg',
     i18n: {
       en: { description: 'This catalog allows you to retrieve your files stored on SharePoint (or Teams).' },
       fr: { description: 'Ce catalogue permet de récupérer vos fichiers sauvegardés sur SharePoint (ou Teams).' },
