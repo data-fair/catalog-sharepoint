@@ -121,6 +121,7 @@ describe('downloadResource', async () => {
       },
       secrets: {},
       importConfig: {},
+      update: { metadata: true, schema: true },
       resourceId: 'a-res-id',
       tmpDir: './test-it/tmp',
       log: logFunctions
@@ -168,6 +169,7 @@ describe('downloadResource', async () => {
       },
       secrets: {},
       importConfig: {},
+      update: { metadata: true, schema: true },
       resourceId: 'a-res-id',
       tmpDir,
       log: logFunctions
