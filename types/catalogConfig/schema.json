@@ -39,7 +39,8 @@
       },
       "layout": {
         "props": {
-          "type": "password"
+          "type": "password",
+          "autocomplete": "suppress"
         }
       }
     },
