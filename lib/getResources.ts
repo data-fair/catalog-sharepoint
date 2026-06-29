@@ -18,10 +18,10 @@ import fs from 'fs'
  */
 export const getResource = async (context: GetResourceContext<SharePointConfig>): Promise<ReturnType<CatalogPlugin['getResource']>> => {
   try {
-    await context.log.step('Téléchargement du fichier depuis SharePoint')
+    await context.log.step('Downloading file from SharePoint')
     const accessToken = await getToken(context.catalogConfig.tenantId, context.catalogConfig.clientId, context.secrets.clientSecret)
     const resource = await getMetaData(context, accessToken)
-    await context.log.task(`Téléchargement ${resource.id}`, `Taille du fichier : ${resource.size ?? NaN} octets`, resource.size ?? NaN)
+    await context.log.task(`Downloading ${resource.id}`, `File size: ${resource.size ?? NaN} bytes`, resource.size ?? NaN)
     resource.filePath = await downloadResource(resource.title, context, accessToken)
     return resource
   } catch (error) {
@@ -90,7 +90,7 @@ export const downloadResource = async (title: string, { catalogConfig, resourceI
   let downloadedBytes = 0
   response.data.on('data', async (chunk: any) => {
     downloadedBytes += chunk.length
-    await log.progress(`Téléchargement ${resourceId}`, downloadedBytes)
+    await log.progress(`Downloading ${resourceId}`, downloadedBytes)
   })
 
   response.data.pipe(writer)

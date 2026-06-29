@@ -54,7 +54,7 @@ export default async ({ catalogConfig, capabilities, secrets }: PrepareContext<S
     catalogConfig.siteId = siteId
   } catch (error) {
     console.error('Error while preparing SharePoint plugin:', error)
-    throw new Error(`Erreur lors de la préparation du plugin SharePoint. ${error instanceof Error ? error.message : error}`)
+    throw new Error(`Error during preparation of the SharePoint plugin. ${error instanceof Error ? error.message : error}`)
   }
 
   return {

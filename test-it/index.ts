@@ -183,7 +183,7 @@ describe('downloadResource', async () => {
       .get('/v1.0/sites/a-site-id/drive/items/a-res-id/content')
       .reply(200, fileContent)
 
-    await context.log.task(`Téléchargement ${context.resourceId}`, `Taille du fichier : ${fileContent.length} octets`, fileContent.length)
+    await context.log.task(`Downloading ${context.resourceId}`, `File size: ${fileContent.length} bytes`, fileContent.length)
     const filePath = await downloadResource(title, context, accessToken)
 
     assert.strictEqual(
