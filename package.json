@@ -27,7 +27,7 @@
   "keywords": [
     "data-fair-catalogs-plugin"
   ],
-  "license": "MIT",
+  "license": "AGPL-3.0-only",
   "dependencies": {
     "@azure/identity": "^4.10.2",
     "@data-fair/lib-node": "^2.11.0",
