@@ -71,12 +71,18 @@
     "siteId": {
       "type": "string",
       "title": "Site ID",
+      "x-i18n-title": {
+        "fr": "ID du site"
+      },
       "description": "The unique identifier of the SharePoint site. This ID can often be retrieved automatically using SharePoint APIs once you have authenticated with the correct credentials.",
       "x-i18n-description": {
         "fr": "L'identifiant unique du site SharePoint. Cet ID peut souvent être récupéré de manière automatique en utilisant les API SharePoint une fois que vous vous êtes authentifié avec les bonnes informations d'identification."
       },
       "readOnly": true,
-      "default": "The site ID will be automatically retrieved from the catalog URL."
+      "default": "The site ID will be automatically retrieved from the catalog URL.",
+      "x-i18n-default": {
+        "fr": "L'identifiant du site sera automatiquement récupéré à partir de l'URL du catalogue."
+      }
     }
   }
 }
