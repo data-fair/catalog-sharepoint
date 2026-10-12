@@ -16,7 +16,6 @@ import { getToken } from './connect.ts'
  * @throws An error if the site ID cannot be retrieved or if the configuration is invalid
  */
 export default async ({ catalogConfig, capabilities, secrets }: PrepareContext<SharePointConfig, SharePointCapabilities>) => {
-  console.log('Preparing SharePoint plugin with config:', catalogConfig)
   const clientSecret = catalogConfig.clientSecret
 
   if (clientSecret && clientSecret !== '********') {
@@ -27,6 +26,8 @@ export default async ({ catalogConfig, capabilities, secrets }: PrepareContext<S
   } else {
     // The secret is already set, do nothing
   }
+  // logged only once the client secret is masked
+  console.log('Preparing SharePoint plugin with config:', catalogConfig)
 
   let siteId: string | undefined
   try {
